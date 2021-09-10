@@ -8,12 +8,13 @@ import { CharacterCard } from "./components/molecules/CharacterCard";
 import { CharacterList } from "./components/organisms/CharacterList";
 import { HomeList } from "./components/templates/HomeList";
 import AppProvider from "./contexts";
-import { ICharacterEpisode, ICharacterIDStatus } from "./types";
+import { ICharacterDetail, ICharacterIDStatus } from "./types";
 import { BrowserRouter, Route, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { CharacterInfo } from "./components/templates/CharacterInfo";
 import { CharacterDetail } from "./components/organisms/CharacterDetail";
 import { Error } from "./components/templates/Error";
+import React from "react";
 
 const characters: ICharacterIDStatus[] = [
   {
@@ -36,9 +37,17 @@ const characters: ICharacterIDStatus[] = [
   },
 ];
 
-const character: ICharacterEpisode = {
+const character: ICharacterDetail = {
   name: "Rick Sanchez",
   image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  species: "Human",
+  gender: "Male",
+  location: {
+    name: "Earth (Replacement Dimension)",
+  },
+  origin: {
+    name: "Earth (C-137)",
+  },
   episode: [
     {
       name: "Pilot",
@@ -120,40 +129,28 @@ describe("Should render molecules", () => {
 
 describe("Should render ", () => {
   it("Character Card", () => {
-    const { name } = characters[0];
-    const { getAllByRole, getByText } = render(
+    const { name, id, image, status } = characters[0];
+    const { getByRole, getByText } = render(
       <AppProvider>
-        <CharacterList characters={characters} loading={false} />
+        <CharacterCard name={name} id={id} image={image} status={status} />
       </AppProvider>
     );
-    const imgs = getAllByRole("img");
-    const buttons = getAllByRole("button");
-    const text = getByText(name);
-    const headTitle = getAllByRole("heading");
-    const titles = headTitle.filter((title) => {
-      const classnames = title.className.split(" ");
-      return classnames.includes("subtitle") || classnames.includes("title");
-    });
-    const bigTitles = headTitle.filter((title) =>
-      title.className.split(" ").includes("big-title")
-    );
-
-    imgs.forEach((img) => expect(img).toBeInTheDocument());
-    buttons.forEach((button) => expect(button).toBeInTheDocument());
-    expect(text.innerHTML).toEqual(name);
-    expect(titles.length).toEqual(2);
-    expect(imgs.length).toEqual(3);
-    expect(buttons.length).toEqual(3);
-    expect(bigTitles.length).toEqual(3);
+    const imgs = getByRole("img");
+    const buttons = getByRole("button");
+    const title = getByRole("heading");
+    expect(imgs).toBeInTheDocument();
+    expect(buttons).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
   });
 });
 
 describe("Should render organisms", () => {
-  it("Character Card", () => {
+  it("Character List", () => {
     const { name } = characters[0];
+    const setPage = () => {};
     const { getAllByRole, getByText } = render(
       <AppProvider>
-        <CharacterList characters={characters} loading={false} />
+        <CharacterList characters={characters} setPage={setPage} />
       </AppProvider>
     );
     const imgs = getAllByRole("img");
@@ -173,7 +170,7 @@ describe("Should render organisms", () => {
     expect(text.innerHTML).toEqual(name);
     expect(titles.length).toEqual(2);
     expect(imgs.length).toEqual(3);
-    expect(buttons.length).toEqual(3);
+    expect(buttons.length).toEqual(4); // 3 Button from Card and 1 for load more
     expect(bigTitles.length).toEqual(3);
   });
 });
@@ -200,7 +197,7 @@ describe("Should change page on click", () => {
     const { getByTestId } = render(
       <AppProvider>
         <Router history={history}>
-          <HomeList characters={characters} loading={false} />
+          <HomeList characters={characters} setPage={() => {}} />
         </Router>
       </AppProvider>
     );
@@ -214,12 +211,21 @@ describe("Should change page on click", () => {
   });
 
   it("Character Details redirect to Home List", () => {
-    const { name, episode, image } = character;
+    const { name, episode, image, gender, location, origin, species } =
+      character;
     const history = createMemoryHistory();
     const { getByRole } = render(
       <AppProvider>
         <Router history={history}>
-          <CharacterInfo episode={episode} name={name} image={image} />
+          <CharacterInfo
+            episode={episode}
+            name={name}
+            image={image}
+            gender={gender}
+            location={location}
+            origin={origin}
+            species={species}
+          />
         </Router>
       </AppProvider>
     );
