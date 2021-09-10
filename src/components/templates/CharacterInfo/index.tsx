@@ -1,5 +1,5 @@
 import { useHistory } from "react-router";
-import { ICharacterEpisode } from "../../../contexts/character";
+import { ICharacterEpisode } from "../../../types";
 import { BigTitle } from "../../atoms/BigTitle";
 import Button from "../../atoms/Button";
 import { CharacterDetail } from "../../organisms/CharacterDetail";
