@@ -1,18 +1,29 @@
-import { ICharacter } from "../../../contexts/character";
-import { Container, InnerContainer, TextContainer, TopText } from "./styles";
+import { Redirect, useHistory } from "react-router";
+import { ICharacterIDStatus } from "../../../contexts/character";
+import { BigTitle } from "../../atoms/BigTitle";
+import { StatusButton } from "../../atoms/StatusButton";
 
-export function CharacterCard({ name, status, image }: ICharacter) {
+import { Container, InnerContainer, TextContainer } from "./styles";
+
+export function CharacterCard({ name, status, image, id }: ICharacterIDStatus) {
+  const history = useHistory();
   return (
-    <Container>
+    <Container onClick={() => history.push(`character/${id}`)}>
       <InnerContainer>
-        <img src={image} alt="Character" className="character" />
+        <img
+          src={image}
+          alt="Character"
+          className="character"
+          width={300}
+          height={300}
+        />
 
         <TextContainer>
-          <TopText>
-            <h5>{name}</h5>
-          </TopText>
+          <BigTitle>{name}</BigTitle>
 
-          <p>{status}</p>
+          <StatusButton status={status}>
+            {status.charAt(0).toUpperCase() + status.slice(1)}
+          </StatusButton>
         </TextContainer>
       </InnerContainer>
     </Container>
