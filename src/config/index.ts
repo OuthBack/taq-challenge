@@ -5,8 +5,6 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-console.log("a:", process.env.REACT_APP_API);
-
 const defaultExport = { client };
 
 export default defaultExport;
