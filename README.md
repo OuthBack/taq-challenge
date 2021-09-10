@@ -175,4 +175,4 @@ Link do Projeto: [https://github.com/OuthBack/taq-challenge](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: .github/screenshot.png
-[site-status]: https://img.shields.io/website/https://vercel.com/outhback/taq-challenge/path/to/page.html.svg.?style=for-the-badge
+[site-status]: https://img.shields.io/website/https/vercel.com/outhback/taq-challenge/path/to/page.html.svg.?style=for-the-badge
