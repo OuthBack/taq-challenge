@@ -1,5 +1,5 @@
-import { Redirect, useHistory } from "react-router";
-import { ICharacterIDStatus } from "../../../contexts/character";
+import { useHistory } from "react-router";
+import { ICharacterIDStatus } from "../../../types";
 import { BigTitle } from "../../atoms/BigTitle";
 import { StatusButton } from "../../atoms/StatusButton";
 
@@ -8,7 +8,10 @@ import { Container, InnerContainer, TextContainer } from "./styles";
 export function CharacterCard({ name, status, image, id }: ICharacterIDStatus) {
   const history = useHistory();
   return (
-    <Container onClick={() => history.push(`character/${id}`)}>
+    <Container
+      onClick={() => history.push(`character/${id}`)}
+      data-testid={`character-${id}`}
+    >
       <InnerContainer>
         <img
           src={image}
