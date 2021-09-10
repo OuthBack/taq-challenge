@@ -1,4 +1,4 @@
-import { IChildren } from "../../../dtos";
+import { IChildren } from "../../../types";
 import { SubTitle as H5SubTitle } from "./styles";
 
 export function SubTitle({ children }: IChildren) {
