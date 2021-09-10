@@ -1,46 +1,178 @@
-# Getting Started with Create React App
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-## Available Scripts
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![site-status]](https://pokemon-manager.vercel.app)
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/OuthBack/taq-challenge">
+    <img src=".github/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-### `yarn start`
+  <h3 align="center">Pokemon Manager</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <p align="center">
+    Um site para ver seus pokemons
+    <br />
+    <br />
+    <a href="https://taq-challenge.vercel.app">Ver Preview</a>
+    ·
+    <a href="https://github.com/OuthBack/taq-challenge/issues">Reportar Bug</a>
+    ·
+    <a href="https://github.com/OuthBack/taq-challenge/issues">Requisitar Feature</a>
+  </p>
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Tabela de Conteúdo</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">Sobre o projeto</a>
+      <ul>
+        <li><a href="#built-with">Feito com:</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Pré-requisitos</a></li>
+        <li><a href="#installation">Instalação</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Site Preview</a></li>
+    <li><a href="#license">Licença</a></li>
+    <li><a href="#contact">Contato</a></li>
 
-### `yarn test`
+  </ol>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
 
-### `yarn build`
+## 📖 Sobre o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Um site para visualizar Pokemons.
+Proposto pela <a href="https://voltbras.com.br/">Voltbras</a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔋 Feito com:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React.js](https://pt-br.reactjs.org)
+- [Jest](https://jestjs.io/pt-BR/)
+- [GraphQL](https://graphql.org)
+- [ApolloGraphQL](https://www.apollographql.com)
 
-### `yarn eject`
+<!-- GETTING STARTED -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :scroll: Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para rodar o projeto localmente siga os seguintes passos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### :warning: Pré-requisitos
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-## Learn More
+### :gear: Instalação
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone o repositório
+   ```sh
+   git clone https://github.com/OuthBack/taq-challenge
+   ```
+2. Instale os pacotes
+   ```sh
+   npm install
+   ```
+   ou
+   ```sh
+   yarn
+   ```
+3. Crie um arquivo `.env` contendo
+   ```
+   REACT_APP_API="https://rickandmortyapi.com/graphql"
+   ```
+4. Execute o projeto
+   ```sh
+   npm run start
+   ```
+   ou
+   ```sh
+   yarn start
+   ```
+5. O site estará aberto usando a porta 3000 em http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- Site Preview -->
+
+## 🖥️ Site Preview
+
+[![site-status]](https://taq-challenge.vercel.app)
+<br/>
+
+[![Product Name Screen Shot][product-screenshot]](https://taq-challenge.vercel.app)
+Veja o Preview do Site:
+https://pokemon-manager.vercel.app
+
+## :dart: Teste
+
+Para testar a aplicação basta rodar
+
+```sh
+npm run test
+```
+
+ou
+
+```sh
+yarn test
+```
+
+<!-- LICENÇA -->
+
+## :pencil: Licença
+
+Distribuido sobre a Licença MIT. Veja `LICENÇA` para mais informações.
+
+<!-- CONTACT -->
+
+## :telephone_receiver: Contato
+
+Henrique Figueiredo - riquessan@gmail.com
+
+Link do Projeto: [https://github.com/OuthBack/taq-challenge](https://github.com/OuthBack/taq-challenge)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: .github/screenshot.png
+[site-status]: https://img.shields.io/website/https/pokemon-manager.vercel.app/path/to/page.html.svg.?style=for-the-badge
