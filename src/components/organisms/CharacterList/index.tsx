@@ -1,23 +1,30 @@
 import { Container, List, CharacterCardSkeleton } from "./styles";
-import { useCharacter } from "../../../contexts/character";
 import { CharacterCard } from "../../molecules/CharacterCard";
+import { Title } from "../../atoms/Title";
+import { SubTitle } from "../../atoms/Subtitle";
+import { ICharacterLoading } from "../../../types";
 
-export function CharacterList() {
-  const { characters, loading } = useCharacter();
+export function CharacterList({ characters, loading }: ICharacterLoading) {
+  const skeletonCardArray = [0, 1, 2, 3];
+
   return (
     <Container>
-      <h1 className="title">Lista de Pokemons</h1>
-      <h5 className="subtitle">Total Visiveis: {characters.length}</h5>
+      <Title>Lista de Personagens</Title>
+      <SubTitle>Total Visíveis: {characters.length}</SubTitle>
       <List>
         {!loading
-          ? characters.map((character) => (
+          ? characters.map((character, i) => (
               <CharacterCard
                 name={character.name}
                 status={character.status}
                 image={character.image}
+                id={character.id}
+                key={character.id}
               />
             ))
-          : characters.map((item, key) => <CharacterCardSkeleton key={key} />)}
+          : skeletonCardArray.map((item, i) => (
+              <CharacterCardSkeleton key={i} />
+            ))}
       </List>
     </Container>
   );
