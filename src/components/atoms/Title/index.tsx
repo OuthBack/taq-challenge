@@ -1,5 +1,4 @@
-import { ReactChild } from "react";
-import { IChildren } from "../../../dtos";
+import { IChildren } from "../../../types";
 import { Title as H1Title } from "./styles";
 
 export function Title({ children }: IChildren) {
