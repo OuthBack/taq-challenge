@@ -21,13 +21,14 @@ export default createGlobalStyle`
   }
   body {
 
-    color: ${(props) => props.theme.font.colors.grey700};
+    background-color: ${(props) => props.theme.colors.grey700};
+    color:  ${(props) => props.theme.font.colors.green200};
     font-family: ${(props) => props.theme.font.family};
     font-weight: 400;
     letter-spacing: 0px;
 
     p, span {
-      color: ${(props) => props.theme.font.colors.grey600};
+      color: ${(props) => props.theme.font.colors.grey700};
     }
     
     span {
@@ -40,11 +41,22 @@ export default createGlobalStyle`
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: hidden;
+
     position: relative;
-    @media screen and (min-width: 1024px) {
-      overflow-y: auto;
-    }
+
   }
+
+
+  &::-webkit-scrollbar {
+      width: 0.75rem;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: ${(props) => props.theme.colors.grey700};
+      border-radius: 0.5625rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: ${(props) => props.theme.colors.green700};
+      border-radius: 0.375rem;
+    }
   
 `;
