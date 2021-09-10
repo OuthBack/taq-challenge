@@ -1,4 +1,4 @@
-import { IChildren } from "../../../dtos";
+import { IChildren } from "../../../types";
 import { MiniButton } from "./styles";
 
 interface IProps extends IChildren {
