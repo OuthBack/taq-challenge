@@ -18,7 +18,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![site-status]](https://pokemon-manager.vercel.app)
+[![site-status]](https://taq-challenge.vercel.app)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -27,10 +27,10 @@
     <img src=".github/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Pokemon Manager</h3>
+  <h3 align="center">Rick and Morty</h3>
 
   <p align="center">
-    Um site para ver seus pokemons
+    Um site sobre Rick and Morty
     <br />
     <br />
     <a href="https://taq-challenge.vercel.app">Ver Preview</a>
@@ -69,8 +69,8 @@
 
 ## 📖 Sobre o projeto
 
-Um site para visualizar Pokemons.
-Proposto pela <a href="https://voltbras.com.br/">Voltbras</a>
+Um site sobre Rick and Morty
+Proposto pela <a href="https://www.taqtile.com.br/">Taqtile</a>
 
 ### 🔋 Feito com:
 
@@ -129,7 +129,7 @@ Para rodar o projeto localmente siga os seguintes passos:
 
 [![Product Name Screen Shot][product-screenshot]](https://taq-challenge.vercel.app)
 Veja o Preview do Site:
-https://pokemon-manager.vercel.app
+https://vercel.com/outhback/taq-challenge
 
 ## :dart: Teste
 
@@ -175,4 +175,4 @@ Link do Projeto: [https://github.com/OuthBack/taq-challenge](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: .github/screenshot.png
-[site-status]: https://img.shields.io/website/https/pokemon-manager.vercel.app/path/to/page.html.svg.?style=for-the-badge
+[site-status]: https://img.shields.io/website/https://vercel.com/outhback/taq-challenge/path/to/page.html.svg.?style=for-the-badge
