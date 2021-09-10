@@ -1,15 +1,13 @@
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../config";
-import { CharacterProvider, CharacterProps } from "./character";
 import { ThemeProvider } from "styled-components";
 import light from "../styles/themes/default";
+import { IChildren } from "../types";
 
-const AppProvider = ({ children }: CharacterProps) => {
+const AppProvider = ({ children }: IChildren) => {
   return (
     <ApolloProvider client={client}>
-      <CharacterProvider>
-        <ThemeProvider theme={light}>{children}</ThemeProvider>
-      </CharacterProvider>
+      <ThemeProvider theme={light}>{children}</ThemeProvider>
     </ApolloProvider>
   );
 };
