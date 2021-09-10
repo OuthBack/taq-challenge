@@ -5,8 +5,8 @@ import { HomeList } from "../components/templates/HomeList";
 import { ICharacterIDStatus } from "../types";
 
 const getAllCharactersQuery = gql`
-  query {
-    characters {
+  query ($data: Int) {
+    characters(page: $data) {
       results {
         name
         status
@@ -17,22 +17,36 @@ const getAllCharactersQuery = gql`
   }
 `;
 
+interface ICharacterResponse {
+  characters: {
+    results: ICharacterIDStatus[];
+  };
+}
+
 export default function Home() {
-  const { loading, error, data } = useQuery(getAllCharactersQuery);
+  const [isFirst, setIsFirst] = useState<boolean>(true);
+  const [page, setPage] = useState(1);
+  const { loading, error, data } = useQuery<ICharacterResponse>(
+    getAllCharactersQuery,
+    {
+      variables: { data: page },
+    }
+  );
   const [characters, setCharacters] = useState<ICharacterIDStatus[]>([]);
 
   const getAllCharacters = useCallback(() => {
-    if (!loading) setCharacters(data.characters.results);
-  }, [data, loading]);
+    if (!isFirst) setIsFirst(false);
+    if (!loading) setCharacters(characters.concat(data?.characters.results!));
+  }, [data, loading, page]);
 
   useEffect(() => {
     getAllCharacters();
-  }, [data, loading, getAllCharacters]);
+  }, [data, loading, getAllCharacters, page]);
 
   if (error) {
     console.error(error);
     return <Error>Ops... Ocorreu um erro</Error>;
   }
 
-  return <HomeList characters={characters} loading={loading} />;
+  return <HomeList characters={characters} loading={false} setPage={setPage} />;
 }

@@ -26,6 +26,7 @@ export default createGlobalStyle`
     font-family: ${(props) => props.theme.font.family};
     font-weight: 400;
     letter-spacing: 0px;
+    
 
     p, span {
       color: ${(props) => props.theme.font.colors.grey700};
@@ -41,13 +42,13 @@ export default createGlobalStyle`
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-
     position: relative;
 
   }
 
 
   &::-webkit-scrollbar {
+    display: none;
       width: 0.75rem;
     }
     &::-webkit-scrollbar-track {
@@ -57,6 +58,12 @@ export default createGlobalStyle`
     &::-webkit-scrollbar-thumb {
       background-color: ${(props) => props.theme.colors.green700};
       border-radius: 0.375rem;
+    }
+  
+    @media screen and (min-width: 768px) {
+      &::-webkit-scrollbar {
+        display: block;
+      }
     }
   
 `;

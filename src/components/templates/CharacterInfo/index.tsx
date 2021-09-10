@@ -1,27 +1,40 @@
 import { useHistory } from "react-router";
-import { ICharacterEpisode } from "../../../types";
+import { ICharacterDetail } from "../../../types";
 import { BigTitle } from "../../atoms/BigTitle";
 import Button from "../../atoms/Button";
+import { SubTitle } from "../../atoms/Subtitle";
+import CharacterInfoCard from "../../molecules/CharacterInfoCard";
 import { CharacterDetail } from "../../organisms/CharacterDetail";
-import { Container, InfoContainer } from "./styles";
+import { ButtonContainer, Container, InfoContainer } from "./styles";
 
-export function CharacterInfo({ name, image, episode }: ICharacterEpisode) {
+export function CharacterInfo({
+  name,
+  image,
+  episode,
+  gender,
+  location,
+  origin,
+  species,
+}: ICharacterDetail) {
   const history = useHistory();
 
   return (
     <Container>
-      <Button onClick={() => history.push("../")}>Menu Principal</Button>
-      <img
-        src={image}
-        alt={name}
-        className="character"
-        height={300}
-        width={300}
+      <ButtonContainer>
+        <Button onClick={() => history.push("../")}>Menu Principal</Button>
+      </ButtonContainer>
+
+      <CharacterInfoCard
+        name={name}
+        image={image}
+        episode={episode}
+        gender={gender}
+        location={location}
+        origin={origin}
+        species={species}
       />
-      <InfoContainer>
-        <BigTitle>{name}</BigTitle>
-        {episode && <CharacterDetail episode={episode} />}
-      </InfoContainer>
+
+      {episode && <CharacterDetail episode={episode} />}
     </Container>
   );
 }

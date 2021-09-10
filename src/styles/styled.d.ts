@@ -11,6 +11,7 @@ declare module "styled-components" {
       colors: {
         white: "#FFFFFF";
         grey700: "#0a2130";
+        grey800: "#040e14";
         blue500: "#23a5be";
         blue400: "#2dd6f7";
         green700: "#217566";
@@ -23,6 +24,7 @@ declare module "styled-components" {
     colors: {
       white: "#FFFFFF";
       grey700: "#0a2130";
+      grey800: "#040e14";
       blue500: "#23a5be";
       blue400: "#2dd6f7";
       green700: "#217566";

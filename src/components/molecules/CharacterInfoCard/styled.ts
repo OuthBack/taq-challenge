@@ -1,0 +1,15 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: ${(props) => props.theme.colors.grey800};
+  padding-bottom: 20px;
+
+  img.character {
+    border-radius: 6px;
+  }
+`;

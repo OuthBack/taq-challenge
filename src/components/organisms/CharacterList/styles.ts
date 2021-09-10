@@ -49,3 +49,11 @@ export const CharacterCardSkeleton = styled.div`
   background-color: ${(props) => props.theme.colors.green700};
   border-radius: 20px;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+`;

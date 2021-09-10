@@ -1,19 +1,39 @@
-import { Container, List, CharacterCardSkeleton } from "./styles";
+import {
+  Container,
+  List,
+  CharacterCardSkeleton,
+  ButtonContainer,
+} from "./styles";
 import { CharacterCard } from "../../molecules/CharacterCard";
 import { Title } from "../../atoms/Title";
 import { SubTitle } from "../../atoms/Subtitle";
-import { ICharacterLoading } from "../../../types";
 
-export function CharacterList({ characters, loading }: ICharacterLoading) {
+import { ICharacterLoadingSetPage } from "../../../types";
+import Button from "../../atoms/Button";
+import { useEffect, useState } from "react";
+import { Loading } from "../../templates/Loading";
+
+export function CharacterList({
+  characters,
+  setPage,
+}: ICharacterLoadingSetPage) {
+  const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
   const skeletonCardArray = [0, 1, 2, 3];
+
+  useEffect(() => {
+    setIsLoadingMore(false);
+  }, [characters]);
 
   return (
     <Container>
       <Title>Lista de Personagens</Title>
       <SubTitle>Total Visíveis: {characters.length}</SubTitle>
       <List>
-        {!loading
-          ? characters.map((character, i) => (
+        {characters.length === 0
+          ? skeletonCardArray.map((item, i) => (
+              <CharacterCardSkeleton key={i} />
+            ))
+          : characters.map((character) => (
               <CharacterCard
                 name={character.name}
                 status={character.status}
@@ -21,11 +41,22 @@ export function CharacterList({ characters, loading }: ICharacterLoading) {
                 id={character.id}
                 key={character.id}
               />
-            ))
-          : skeletonCardArray.map((item, i) => (
-              <CharacterCardSkeleton key={i} />
             ))}
       </List>
+      {isLoadingMore ? (
+        <Loading />
+      ) : (
+        <ButtonContainer>
+          <Button
+            onClick={() => {
+              setIsLoadingMore(true);
+              setPage((previousState) => previousState + 1);
+            }}
+          >
+            Carregar mais
+          </Button>
+        </ButtonContainer>
+      )}
     </Container>
   );
 }

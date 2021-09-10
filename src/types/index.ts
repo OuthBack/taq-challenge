@@ -1,5 +1,7 @@
 import { ReactChild } from "react";
 
+type stateNumberFunction = (previousState: number) => number;
+
 export interface IChildren {
   children?: ReactChild | ReactChild[];
 }
@@ -9,7 +11,15 @@ export interface ICharacter {
   image: string;
 }
 
-export interface ICharacterEpisode extends ICharacter {
+export interface ICharacterDetail extends ICharacter {
+  species: string;
+  gender: string;
+  location: {
+    name: string;
+  };
+  origin: {
+    name: string;
+  };
   episode: { name: string }[];
 }
 
@@ -18,7 +28,10 @@ export interface ICharacterIDStatus extends ICharacter {
   status: string;
 }
 
-export interface ICharacterLoading {
+export interface ICharacters {
   characters: ICharacterIDStatus[];
-  loading: boolean;
+}
+
+export interface ICharacterLoadingSetPage extends ICharacters {
+  setPage(func: stateNumberFunction): void;
 }
