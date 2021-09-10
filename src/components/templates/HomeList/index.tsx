@@ -5,17 +5,13 @@ import { ICharacterLoadingSetPage } from "../../../types";
 
 export function HomeList({
   characters,
-  loading,
+
   setPage,
 }: ICharacterLoadingSetPage) {
   return (
     <Container>
       <Logo />
-      <CharacterList
-        characters={characters}
-        loading={loading}
-        setPage={setPage}
-      />
+      <CharacterList characters={characters} setPage={setPage} />
     </Container>
   );
 }
