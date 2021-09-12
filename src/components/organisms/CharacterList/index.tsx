@@ -9,16 +9,16 @@ import { Title } from "../../atoms/Title";
 import { SubTitle } from "../../atoms/Subtitle";
 
 import { ICharacterLoadingSetPage } from "../../../types";
-import Button from "../../atoms/Button";
 import { useEffect, useState } from "react";
 import { Loading } from "../../templates/Loading";
+import { Sentinel } from "../../atoms/Sentinel";
 
 export function CharacterList({
   characters,
   setPage,
 }: ICharacterLoadingSetPage) {
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
-  const skeletonCardArray = [0, 1, 2, 3];
+  const skeletonCardArray = [0, 1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
     setIsLoadingMore(false);
@@ -47,14 +47,12 @@ export function CharacterList({
         <Loading />
       ) : (
         <ButtonContainer>
-          <Button
-            onClick={() => {
+          <Sentinel
+            callback={() => {
               setIsLoadingMore(true);
-              setPage((previousState) => previousState + 1);
+              setPage((previousValue) => previousValue + 1);
             }}
-          >
-            Carregar mais
-          </Button>
+          />
         </ButtonContainer>
       )}
     </Container>

@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const Episodes = styled.ul`
   background-color: ${(props) => props.theme.colors.grey800};
   display: flex;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid ${(props) => props.theme.colors.green700};
   padding: 30px;
   gap: 20px;

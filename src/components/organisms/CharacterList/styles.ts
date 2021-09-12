@@ -6,8 +6,8 @@ export const Container = styled.main`
   height: 330px;
   background-color: ${(props) => props.theme.colors.grey700};
 
-  h1.big-title {
-    margin-top: 20px;
+  .loading {
+    margin-top: 40px;
   }
 
   @media screen and (min-width: 1080px) {
@@ -20,15 +20,11 @@ export const Container = styled.main`
 export const List = styled.section`
   margin-top: 31px;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 35px;
   width: 100%;
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr;
-  }
-
-  @media screen and (min-width: 1080px) {
-    padding-right: 20px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -46,7 +42,7 @@ export const List = styled.section`
 export const CharacterCardSkeleton = styled.div`
   width: 100%;
   height: 330px;
-  background-color: ${(props) => props.theme.colors.green700};
+  background-color: ${(props) => props.theme.colors.grey800};
   border-radius: 20px;
 `;
 

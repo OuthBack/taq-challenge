@@ -24,7 +24,6 @@ interface ICharacterResponse {
 }
 
 export default function Home() {
-  const [isFirst, setIsFirst] = useState<boolean>(true);
   const [page, setPage] = useState(1);
   const { loading, error, data } = useQuery<ICharacterResponse>(
     getAllCharactersQuery,
@@ -35,18 +34,20 @@ export default function Home() {
   const [characters, setCharacters] = useState<ICharacterIDStatus[]>([]);
 
   const getAllCharacters = useCallback(() => {
-    if (!isFirst) setIsFirst(false);
-    if (!loading) setCharacters(characters.concat(data?.characters.results!));
-  }, [data, loading, page]);
+    if (!loading)
+      setCharacters((previousCharacters) =>
+        previousCharacters.concat(data?.characters.results!)
+      );
+  }, [data, loading]);
 
   useEffect(() => {
     getAllCharacters();
-  }, [data, loading, getAllCharacters, page]);
+  }, [getAllCharacters]);
 
   if (error) {
     console.error(error);
     return <Error>Ops... Ocorreu um erro</Error>;
   }
 
-  return <HomeList characters={characters} loading={false} setPage={setPage} />;
+  return <HomeList characters={characters} setPage={setPage} />;
 }

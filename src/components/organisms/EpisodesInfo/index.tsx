@@ -8,7 +8,7 @@ interface Props {
   }[];
 }
 
-export function CharacterDetail({ episode }: Props) {
+export function EpisodesInfo({ episode }: Props) {
   return (
     <Container>
       <Title>Episódios:</Title>

@@ -1,11 +1,9 @@
 import { useHistory } from "react-router";
-import { ICharacterDetail } from "../../../types";
-import { BigTitle } from "../../atoms/BigTitle";
+import { ICharacterDetailEpisodes } from "../../../types";
 import Button from "../../atoms/Button";
-import { SubTitle } from "../../atoms/Subtitle";
 import CharacterInfoCard from "../../molecules/CharacterInfoCard";
-import { CharacterDetail } from "../../organisms/CharacterDetail";
-import { ButtonContainer, Container, InfoContainer } from "./styles";
+import { EpisodesInfo } from "../../organisms/EpisodesInfo";
+import { ButtonContainer, Container } from "./styles";
 
 export function CharacterInfo({
   name,
@@ -15,7 +13,7 @@ export function CharacterInfo({
   location,
   origin,
   species,
-}: ICharacterDetail) {
+}: ICharacterDetailEpisodes) {
   const history = useHistory();
 
   return (
@@ -27,14 +25,13 @@ export function CharacterInfo({
       <CharacterInfoCard
         name={name}
         image={image}
-        episode={episode}
         gender={gender}
         location={location}
         origin={origin}
         species={species}
       />
 
-      {episode && <CharacterDetail episode={episode} />}
+      {episode && <EpisodesInfo episode={episode} />}
     </Container>
   );
 }

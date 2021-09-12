@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border-radius: 4px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +10,6 @@ export const Container = styled.div`
   padding-bottom: 20px;
 
   img.character {
-    border-radius: 6px;
+    border-radius: 10px;
   }
 `;

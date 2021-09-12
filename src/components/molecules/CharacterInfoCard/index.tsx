@@ -1,6 +1,4 @@
-import React from "react";
 import { ICharacterDetail } from "../../../types";
-import { BigTitle } from "../../atoms/BigTitle";
 import { MediumTitle } from "../../atoms/MediumTitle";
 import { SubTitle } from "../../atoms/Subtitle";
 import { Container } from "./styled";
@@ -8,7 +6,6 @@ import { Container } from "./styled";
 export default function CharacterInfoCard({
   name,
   image,
-  episode,
   gender,
   location,
   origin,
@@ -24,10 +21,21 @@ export default function CharacterInfoCard({
         width={300}
       />
       <MediumTitle>{name}</MediumTitle>
-      <SubTitle>Gender: {gender}</SubTitle>
-      <SubTitle>Location: {location.name}</SubTitle>
-      <SubTitle>Origin: {origin.name}</SubTitle>
-      <SubTitle>Species: {species}</SubTitle>
+      <SubTitle>
+        Gender: <b>{gender}</b>
+      </SubTitle>
+
+      <SubTitle>
+        Location: <b>{location.name}</b>
+      </SubTitle>
+
+      <SubTitle>
+        Origin: <b>{origin.name}</b>
+      </SubTitle>
+
+      <SubTitle>
+        Species: <b>{species}</b>
+      </SubTitle>
     </Container>
   );
 }

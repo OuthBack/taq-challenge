@@ -4,11 +4,11 @@ import { useParams } from "react-router";
 import { CharacterInfo } from "../../components/templates/CharacterInfo";
 import { Error } from "../../components/templates/Error";
 import { Loading } from "../../components/templates/Loading";
-import { ICharacterDetail } from "../../types";
+import { ICharacterDetailEpisodes } from "../../types";
 
 const getCharacter = (id: string) => gql`
   query {
-    character(id: 1) {
+    character(id: ${id}) {
       name
       image
       species
@@ -29,15 +29,15 @@ const getCharacter = (id: string) => gql`
 export default function Character() {
   const { id } = useParams<{ id: string }>();
   const { loading, error, data } = useQuery(getCharacter(id));
-  const [character, setCharacter] = useState<ICharacterDetail>();
+  const [character, setCharacter] = useState<ICharacterDetailEpisodes>();
 
   const getCharacterInfo = useCallback(() => {
-    if (!loading) setCharacter(data.character);
+    if (!loading) setCharacter(data?.character);
   }, [loading, data]);
 
   useEffect(() => {
     getCharacterInfo();
-  }, [loading, data, getCharacterInfo]);
+  }, [getCharacterInfo]);
 
   if (error) {
     console.error(error);
