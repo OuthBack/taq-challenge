@@ -52,7 +52,7 @@ export default createGlobalStyle`
       width: 0.75rem;
     }
     &::-webkit-scrollbar-track {
-      background-color: ${(props) => props.theme.colors.grey700};
+      background-color: ${(props) => props.theme.colors.grey800};
       border-radius: 0.5625rem;
     }
     &::-webkit-scrollbar-thumb {
