@@ -8,13 +8,19 @@ import { CharacterCard } from "./components/molecules/CharacterCard";
 import { CharacterList } from "./components/organisms/CharacterList";
 import { HomeList } from "./components/templates/HomeList";
 import AppProvider from "./contexts";
-import { ICharacterDetail, ICharacterIDStatus } from "./types";
+import {
+  ICharacterDetail,
+  ICharacterDetailEpisodes,
+  ICharacterIDStatus,
+} from "./types";
 import { BrowserRouter, Route, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { CharacterInfo } from "./components/templates/CharacterInfo";
-import { CharacterDetail } from "./components/organisms/CharacterDetail";
+import { EpisodesInfo } from "./components/organisms/EpisodesInfo";
 import { Error } from "./components/templates/Error";
-import React from "react";
+import "intersection-observer";
+import { Sentinel } from "./components/atoms/Sentinel";
+import CharacterInfoCard from "./components/molecules/CharacterInfoCard";
 
 const characters: ICharacterIDStatus[] = [
   {
@@ -37,7 +43,7 @@ const characters: ICharacterIDStatus[] = [
   },
 ];
 
-const character: ICharacterDetail = {
+const character: ICharacterDetailEpisodes = {
   name: "Rick Sanchez",
   image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
   species: "Human",
@@ -67,6 +73,16 @@ describe("Should render atoms", () => {
     );
     const bigTitle = getByRole("heading");
     expect(bigTitle).toBeInTheDocument();
+  });
+
+  it("MediumTitle", () => {
+    const { getByRole } = render(
+      <AppProvider>
+        <BigTitle />
+      </AppProvider>
+    );
+    const mediumTitle = getByRole("heading");
+    expect(mediumTitle).toBeInTheDocument();
   });
 
   it("Title", () => {
@@ -108,6 +124,16 @@ describe("Should render atoms", () => {
     const img = getByRole("img");
     expect(img).toBeInTheDocument();
   });
+
+  it("Sentinel", () => {
+    const { getByTestId } = render(
+      <AppProvider>
+        <Sentinel callback={() => {}} />
+      </AppProvider>
+    );
+    const sentinel = getByTestId("sentinel");
+    expect(sentinel).toBeInTheDocument();
+  });
 });
 
 describe("Should render molecules", () => {
@@ -120,27 +146,36 @@ describe("Should render molecules", () => {
     );
     const img = getByRole("img");
     const button = getByRole("button");
-    const text = getByText(name);
+    const text = getByText(new RegExp(`${name}`, "i"));
     expect(img).toBeInTheDocument();
     expect(button).toBeInTheDocument();
     expect(text.innerHTML).toEqual(name);
   });
-});
 
-describe("Should render ", () => {
-  it("Character Card", () => {
-    const { name, id, image, status } = characters[0];
-    const { getByRole, getByText } = render(
+  it("Character Info Card", () => {
+    const { name, image, gender, location, origin, species } = character;
+    const { getAllByRole, getByRole, getByText } = render(
       <AppProvider>
-        <CharacterCard name={name} id={id} image={image} status={status} />
+        <CharacterInfoCard
+          name={name}
+          gender={gender}
+          location={location}
+          origin={origin}
+          species={species}
+          image={image}
+        />
       </AppProvider>
     );
-    const imgs = getByRole("img");
-    const buttons = getByRole("button");
-    const title = getByRole("heading");
-    expect(imgs).toBeInTheDocument();
-    expect(buttons).toBeInTheDocument();
-    expect(title).toBeInTheDocument();
+    const img = getByRole("img");
+    const title = getAllByRole("heading");
+    getByText(new RegExp(`${name}`, "i"));
+    getByText(/gender/i);
+    getByText(/location/i);
+    getByText(/origin/i);
+    getByText(/species/i);
+
+    expect(title.length).toEqual(5);
+    expect(img).toBeInTheDocument();
   });
 });
 
@@ -170,8 +205,25 @@ describe("Should render organisms", () => {
     expect(text.innerHTML).toEqual(name);
     expect(titles.length).toEqual(2);
     expect(imgs.length).toEqual(3);
-    expect(buttons.length).toEqual(4); // 3 Button from Card and 1 for load more
+    expect(buttons.length).toEqual(3);
     expect(bigTitles.length).toEqual(3);
+  });
+
+  it("Episodes Info", () => {
+    const { episode } = character;
+    const { queryByText } = render(
+      <AppProvider>
+        <EpisodesInfo episode={episode} />
+      </AppProvider>
+    );
+
+    const text = queryByText(/episódios/i);
+    expect(text).toBeInTheDocument();
+
+    episode.forEach(({ name }) => {
+      const episodeText = queryByText(new RegExp(name));
+      expect(episodeText).toBeInTheDocument();
+    });
   });
 });
 
@@ -238,7 +290,7 @@ describe("Should change page on click", () => {
     expect(history.location.pathname).toBe("../");
   });
 
-  it("Error redirect to Home List", async () => {
+  it("Error redirect to Home List", () => {
     const history = createMemoryHistory();
     const { getByRole } = render(
       <AppProvider>
@@ -248,11 +300,11 @@ describe("Should change page on click", () => {
       </AppProvider>
     );
 
-    await act(async () => {
+    act(() => {
       const button = getByRole("button");
       fireEvent.click(button);
     });
 
-    expect(history.location.pathname).toBe("./");
+    expect(history.location.pathname).toBe("/");
   });
 });
