@@ -4,7 +4,13 @@ import ReactLoading from "react-loading";
 export function Loading() {
   return (
     <Container>
-      <ReactLoading type="spin" color="#fff" height={"5%"} width={"5%"} />
+      <ReactLoading
+        className="loading"
+        type="spin"
+        color="#fff"
+        height={"5%"}
+        width={"5%"}
+      />
     </Container>
   );
 }
