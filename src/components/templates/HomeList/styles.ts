@@ -8,5 +8,14 @@ export const Container = styled.div`
 
   img.logo {
     margin: 0 auto;
+    width: 300px;
+    height: 120px;
+  }
+
+  @media screen and (min-width: 768px) {
+    img.logo {
+      width: auto;
+      height: auto;
+    }
   }
 `;
