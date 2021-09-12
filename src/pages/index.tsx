@@ -1,7 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
 import { useCallback, useEffect, useState } from "react";
-import { MiddleTitle } from "../components/molecules/MiddleTitle";
-import { Error } from "../components/templates/Error";
 import { HomeList } from "../components/templates/HomeList";
 import { ICharacterIDStatus } from "../types";
 
@@ -39,7 +37,7 @@ export default function Home() {
       setCharacters((previousCharacters) =>
         previousCharacters.concat(data?.characters.results!)
       );
-  }, [data, loading]);
+  }, [data, loading, error]);
 
   useEffect(() => {
     getAllCharacters();
