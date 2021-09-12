@@ -11,7 +11,7 @@ export function Error({ children }: IChildren) {
       <Title>{children}</Title>
       <Button
         onClick={() => {
-          history.push("./");
+          history.go(0);
         }}
       >
         Tentar novamente
