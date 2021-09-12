@@ -20,6 +20,9 @@ export interface ICharacterDetail extends ICharacter {
   origin: {
     name: string;
   };
+}
+
+export interface ICharacterDetailEpisodes extends ICharacterDetail {
   episode: { name: string }[];
 }
 
