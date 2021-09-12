@@ -27,11 +27,7 @@ export const List = styled.section`
     grid-template-columns: 1fr;
   }
 
-  @media screen and (min-width: 1280px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1440px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (min-width: 2300px) {
