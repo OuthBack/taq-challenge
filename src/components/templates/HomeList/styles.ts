@@ -19,3 +19,7 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ErrorContainer = styled.div`
+  padding: 40px 0;
+`;

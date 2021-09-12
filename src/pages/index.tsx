@@ -1,5 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
 import { useCallback, useEffect, useState } from "react";
+import { MiddleTitle } from "../components/molecules/MiddleTitle";
 import { Error } from "../components/templates/Error";
 import { HomeList } from "../components/templates/HomeList";
 import { ICharacterIDStatus } from "../types";
@@ -34,7 +35,7 @@ export default function Home() {
   const [characters, setCharacters] = useState<ICharacterIDStatus[]>([]);
 
   const getAllCharacters = useCallback(() => {
-    if (!loading)
+    if (!loading && !error)
       setCharacters((previousCharacters) =>
         previousCharacters.concat(data?.characters.results!)
       );
@@ -44,10 +45,5 @@ export default function Home() {
     getAllCharacters();
   }, [getAllCharacters]);
 
-  if (error) {
-    console.error(error);
-    return <Error>Ops... Ocorreu um erro</Error>;
-  }
-
-  return <HomeList characters={characters} setPage={setPage} />;
+  return <HomeList characters={characters} setPage={setPage} error={error} />;
 }

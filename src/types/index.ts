@@ -1,3 +1,4 @@
+import { ApolloError } from "@apollo/client";
 import { ReactChild } from "react";
 
 type stateNumberFunction = (previousState: number) => number;
@@ -35,6 +36,7 @@ export interface ICharacters {
   characters: ICharacterIDStatus[];
 }
 
-export interface ICharacterLoadingSetPage extends ICharacters {
+export interface ICharacterLoadingSetPageError extends ICharacters {
   setPage(func: stateNumberFunction): void;
+  error?: ApolloError;
 }

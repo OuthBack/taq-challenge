@@ -8,15 +8,16 @@ import { CharacterCard } from "../../molecules/CharacterCard";
 import { Title } from "../../atoms/Title";
 import { SubTitle } from "../../atoms/Subtitle";
 
-import { ICharacterLoadingSetPage } from "../../../types";
+import { ICharacterLoadingSetPageError } from "../../../types";
 import { useEffect, useState } from "react";
 import { Loading } from "../../templates/Loading";
 import { Sentinel } from "../../atoms/Sentinel";
 
 export function CharacterList({
   characters,
+  error,
   setPage,
-}: ICharacterLoadingSetPage) {
+}: ICharacterLoadingSetPageError) {
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
   const skeletonCardArray = [0, 1, 2, 3, 4, 5, 6, 7];
 
@@ -43,14 +44,16 @@ export function CharacterList({
               />
             ))}
       </List>
-      {isLoadingMore ? (
+      {isLoadingMore && !error ? (
         <Loading />
       ) : (
         <ButtonContainer>
           <Sentinel
             callback={() => {
-              setIsLoadingMore(true);
-              setPage((previousValue) => previousValue + 1);
+              if (!error) {
+                setIsLoadingMore(true);
+                setPage((previousValue) => previousValue + 1);
+              }
             }}
           />
         </ButtonContainer>
