@@ -15,7 +15,6 @@ export function HomeList({
   const handleError = useCallback(() => {
     if (error) {
       console.error(error);
-      console.log(error?.graphQLErrors[0].extensions?.response.status);
 
       if (error?.graphQLErrors[0].extensions?.response.status === 404)
         setShowError(true);
