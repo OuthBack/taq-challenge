@@ -14,10 +14,11 @@ export function HomeList({
 
   const handleError = useCallback(() => {
     if (error) {
-      console.error(error);
-
       if (error?.graphQLErrors[0].extensions?.response.status === 404)
         setShowError(true);
+      else {
+        console.error(error);
+      }
     }
   }, [error]);
 
