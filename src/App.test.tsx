@@ -21,6 +21,7 @@ import { Error } from "./components/templates/Error";
 import "intersection-observer";
 import { Sentinel } from "./components/atoms/Sentinel";
 import CharacterInfoCard from "./components/molecules/CharacterInfoCard";
+import { AlternativeSubTitle } from "./components/atoms/AltenativeSubtitle";
 
 const characters: ICharacterIDStatus[] = [
   {
@@ -99,6 +100,16 @@ describe("Should render atoms", () => {
     const { getByRole } = render(
       <AppProvider>
         <SubTitle />
+      </AppProvider>
+    );
+    const subtitle = getByRole("heading");
+    expect(subtitle).toBeInTheDocument();
+  });
+
+  it("SubTitle", () => {
+    const { getByRole } = render(
+      <AppProvider>
+        <AlternativeSubTitle />
       </AppProvider>
     );
     const subtitle = getByRole("heading");
