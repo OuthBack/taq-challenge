@@ -14,9 +14,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Forks][forks-shield]][forks-url]
+<!-- [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][license-url]-->
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![site-status]](https://taq-challenge.vercel.app)
 
