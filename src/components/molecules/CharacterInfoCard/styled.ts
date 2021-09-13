@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background-color: ${(props) => props.theme.colors.grey800};
+  background-color: ${(props) => props.theme.colors.grey700};
   padding-bottom: 20px;
 
   img.character {

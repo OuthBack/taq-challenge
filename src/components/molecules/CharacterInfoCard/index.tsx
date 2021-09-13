@@ -1,6 +1,7 @@
 import { ICharacterDetail } from "../../../types";
 import { MediumTitle } from "../../atoms/MediumTitle";
 import { SubTitle } from "../../atoms/Subtitle";
+import { AlternativeSubTitle } from "../../atoms/AltenativeSubtitle";
 import { Container } from "./styled";
 
 export default function CharacterInfoCard({
@@ -21,21 +22,21 @@ export default function CharacterInfoCard({
         width={300}
       />
       <MediumTitle>{name}</MediumTitle>
-      <SubTitle>
+      <AlternativeSubTitle>
         Gender: <b>{gender}</b>
-      </SubTitle>
+      </AlternativeSubTitle>
 
-      <SubTitle>
+      <AlternativeSubTitle>
         Location: <b>{location.name}</b>
-      </SubTitle>
+      </AlternativeSubTitle>
 
-      <SubTitle>
+      <AlternativeSubTitle>
         Origin: <b>{origin.name}</b>
-      </SubTitle>
+      </AlternativeSubTitle>
 
-      <SubTitle>
+      <AlternativeSubTitle>
         Species: <b>{species}</b>
-      </SubTitle>
+      </AlternativeSubTitle>
     </Container>
   );
 }

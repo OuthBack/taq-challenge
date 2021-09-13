@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.grey800};
+  background-color: ${(props) => props.theme.colors.grey700};
   border-radius: 20px;
   cursor: pointer;
   width: 300px;

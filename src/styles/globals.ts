@@ -21,7 +21,7 @@ export default createGlobalStyle`
   }
   body {
 
-    background-color: ${(props) => props.theme.colors.grey700};
+    background-color: ${(props) => props.theme.colors.white};
     color:  ${(props) => props.theme.font.colors.green200};
     font-family: ${(props) => props.theme.font.family};
     font-weight: 400;
@@ -52,11 +52,11 @@ export default createGlobalStyle`
       width: 0.75rem;
     }
     &::-webkit-scrollbar-track {
-      background-color: ${(props) => props.theme.colors.grey800};
+      background-color: ${(props) => props.theme.colors.white};
       border-radius: 0.5625rem;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: ${(props) => props.theme.colors.green700};
+      background-color: ${(props) => props.theme.colors.green300};
       border-radius: 0.375rem;
     }
   

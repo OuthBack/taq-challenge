@@ -4,7 +4,6 @@ export const Container = styled.main`
   padding: 20px;
   transition: ease-in-out 0.5s;
   height: 330px;
-  background-color: ${(props) => props.theme.colors.grey700};
 
   .loading {
     margin-top: 40px;

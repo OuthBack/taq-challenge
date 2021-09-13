@@ -1,4 +1,4 @@
-import { SubTitle } from "../../atoms/Subtitle";
+import { AlternativeSubTitle } from "../../atoms/AltenativeSubtitle";
 import { Title } from "../../atoms/Title";
 import { Container, Episodes } from "./styles";
 
@@ -16,7 +16,7 @@ export function EpisodesInfo({ episode }: Props) {
       <Episodes>
         {episode.map((episodeName, i) => (
           <li key={i}>
-            <SubTitle>{episodeName.name}</SubTitle>
+            <AlternativeSubTitle>{episodeName.name}</AlternativeSubTitle>
           </li>
         ))}
       </Episodes>
