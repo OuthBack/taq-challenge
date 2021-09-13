@@ -1,30 +1,11 @@
 import { CharacterList } from "../../organisms/CharacterList";
 import { Logo } from "../../atoms/Logo";
 import { Container, ErrorContainer } from "./styles";
-import { ICharacterLoadingSetPageError } from "../../../types";
 import { MiddleTitle } from "../../molecules/MiddleTitle";
-import { useCallback, useEffect, useState } from "react";
+import { usePaginateCharacters } from "../../../hooks/usePaginateCharacters";
 
-export function HomeList({
-  characters,
-  error,
-  setPage,
-}: ICharacterLoadingSetPageError) {
-  const [showError, setShowError] = useState<boolean>(false);
-
-  const handleError = useCallback(() => {
-    if (error) {
-      if (error?.graphQLErrors[0].extensions?.response.status === 404)
-        setShowError(true);
-      else {
-        console.error(error);
-      }
-    }
-  }, [error]);
-
-  useEffect(() => {
-    handleError();
-  }, [handleError]);
+export function HomeList() {
+  const { characters, error, setPage, showError } = usePaginateCharacters();
 
   return (
     <Container>

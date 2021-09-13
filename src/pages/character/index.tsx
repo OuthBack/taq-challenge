@@ -1,47 +1,23 @@
-import { useQuery, gql } from "@apollo/client";
-import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory } from "react-router";
 import { CharacterInfo } from "../../components/templates/CharacterInfo";
 import { Error } from "../../components/templates/Error";
 import { Loading } from "../../components/templates/Loading";
-import { ICharacterDetailEpisodes } from "../../types";
-
-const getCharacter = (id: string) => gql`
-  query {
-    character(id: ${id}) {
-      name
-      image
-      species
-      gender
-      location {
-        name
-      }
-      origin {
-        name
-      }
-      episode {
-        name
-      }
-    }
-  }
-`;
+import { useCharacter } from "../../hooks/useCharacter";
 
 export default function Character() {
-  const { id } = useParams<{ id: string }>();
-  const { loading, error, data } = useQuery(getCharacter(id));
-  const [character, setCharacter] = useState<ICharacterDetailEpisodes>();
-
-  const getCharacterInfo = useCallback(() => {
-    if (!loading) setCharacter(data?.character);
-  }, [loading, data]);
-
-  useEffect(() => {
-    getCharacterInfo();
-  }, [getCharacterInfo]);
+  const { character, error, loading } = useCharacter();
+  const history = useHistory();
+  const sendToPage = () => {
+    history.go(0);
+  };
 
   if (error) {
     console.error(error);
-    return <Error>Ops... Ocorreu um erro</Error>;
+    return (
+      <Error sendToPage={sendToPage}>
+        Ops... Ocorreu um erro ao buscar dados do personagem
+      </Error>
+    );
   }
 
   return (

@@ -19,7 +19,7 @@ export function CharacterList({
   setPage,
 }: ICharacterLoadingSetPageError) {
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
-  const skeletonCardArray = [0, 1, 2, 3, 4, 5, 6, 7];
+  const skeletonCardArray = Array.from({ length: 8 });
 
   useEffect(() => {
     setIsLoadingMore(false);
