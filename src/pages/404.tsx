@@ -9,8 +9,9 @@ export function Error404() {
       sendToPage={() => {
         history.push("/");
       }}
+      buttonText="Voltar para a Home"
     >
-      Error 404 - Página não encontrada
+      Erro 404 - Página não encontrada
     </Error>
   );
 }

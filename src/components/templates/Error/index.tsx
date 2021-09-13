@@ -5,13 +5,14 @@ import { Container } from "./styles";
 
 interface IChildrenProps extends IChildren {
   sendToPage: () => any;
+  buttonText: string;
 }
 
-export function Error({ children, sendToPage }: IChildrenProps) {
+export function Error({ children, sendToPage, buttonText }: IChildrenProps) {
   return (
     <Container>
       <Title>{children}</Title>
-      <Button onClick={sendToPage}>Tentar novamente</Button>
+      <Button onClick={sendToPage}>{buttonText}</Button>
     </Container>
   );
 }
