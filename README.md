@@ -162,17 +162,17 @@ Link do Projeto: [https://github.com/OuthBack/taq-challenge](https://github.com/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/OuthBack/taq-challenge/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/OuthBack/taq-challenge/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/OuthBack/taq-challenge.svg?style=for-the-badge
+[forks-url]: https://github.com/OuthBack/taq-challenge/network/members
+[stars-shield]: https://img.shields.io/github/stars/OuthBack/taq-challenge.svg?style=for-the-badge
+[stars-url]: https://github.com/OuthBack/taq-challenge/stargazers
+[issues-shield]: https://img.shields.io/github/issues/OuthBack/taq-challenge.svg?style=for-the-badge
+[issues-url]: https://github.com/OuthBack/taq-challenge/issues
+[license-shield]: https://img.shields.io/github/license/OuthBack/taq-challenge.svg?style=for-the-badge
+[license-url]: https://github.com/OuthBack/taq-challenge/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://www.linkedin.com/in/henrique-figueiredo-0396921a7/
 [product-screenshot]: .github/screenshot.png
 [site-status]: https://img.shields.io/website/https/vercel.com/outhback/taq-challenge/path/to/page.html.svg.?style=for-the-badge
