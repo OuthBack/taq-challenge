@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.7",
-    "@react-hook/debounce": "^4.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -47,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/react-router-dom": "^5.1.8",
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.12",
