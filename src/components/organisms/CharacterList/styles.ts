@@ -37,7 +37,7 @@ export const List = styled.section`
 export const CharacterCardSkeleton = styled.div`
   width: 100%;
   height: 330px;
-  background-color: ${(props) => props.theme.colors.grey800};
+  background-color: ${(props) => props.theme.colors.grey700};
   border-radius: 20px;
 `;
 
