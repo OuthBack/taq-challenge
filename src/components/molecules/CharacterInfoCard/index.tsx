@@ -1,6 +1,5 @@
 import { ICharacterDetail } from "../../../types";
 import { MediumTitle } from "../../atoms/MediumTitle";
-import { SubTitle } from "../../atoms/Subtitle";
 import { AlternativeSubTitle } from "../../atoms/AltenativeSubtitle";
 import { Container } from "./styled";
 
