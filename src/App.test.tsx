@@ -231,7 +231,7 @@ describe("Should render Error", () => {
   it("Error Compoennt", () => {
     const { getByRole } = render(
       <AppProvider>
-        <Error>error</Error>
+        <Error sendToPage={() => {}}>error</Error>
       </AppProvider>
     );
 
@@ -249,7 +249,7 @@ describe("Should change page on click", () => {
     const { getByTestId } = render(
       <AppProvider>
         <Router history={history}>
-          <HomeList characters={characters} setPage={() => {}} />
+          <CharacterList characters={characters} setPage={() => {}} />
         </Router>
       </AppProvider>
     );
@@ -295,7 +295,7 @@ describe("Should change page on click", () => {
     const { getByRole } = render(
       <AppProvider>
         <Router history={history}>
-          <Error />
+          <Error sendToPage={() => history.push("/")} />
         </Router>
       </AppProvider>
     );

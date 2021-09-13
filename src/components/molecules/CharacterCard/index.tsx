@@ -7,6 +7,7 @@ import { Container, InnerContainer, TextContainer } from "./styles";
 
 export function CharacterCard({ name, status, image, id }: ICharacterIDStatus) {
   const history = useHistory();
+
   return (
     <Container
       onClick={() => history.push(`character/${id}`)}
