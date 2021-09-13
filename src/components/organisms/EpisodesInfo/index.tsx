@@ -11,7 +11,7 @@ interface Props {
 export function EpisodesInfo({ episode }: Props) {
   return (
     <Container>
-      <Title>Episódios:</Title>
+      <Title>Episodes</Title>
 
       <Episodes>
         {episode.map((episodeName, i) => (

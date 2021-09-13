@@ -27,8 +27,8 @@ export function CharacterList({
 
   return (
     <Container>
-      <Title>Lista de Personagens</Title>
-      <SubTitle>Total Visíveis: {characters.length}</SubTitle>
+      <Title>Character's List</Title>
+      <SubTitle>Total visible: {characters.length}</SubTitle>
       <List>
         {characters.length === 0
           ? skeletonCardArray.map((item, i) => (

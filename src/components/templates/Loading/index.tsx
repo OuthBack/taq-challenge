@@ -7,7 +7,7 @@ export function Loading() {
       <ReactLoading
         className="loading"
         type="spin"
-        color="#fff"
+        color="#000"
         height={"5%"}
         width={"5%"}
       />

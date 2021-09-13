@@ -14,8 +14,8 @@ export default function Character() {
   if (error) {
     console.error(error);
     return (
-      <Error sendToPage={sendToPage} buttonText="Tentar novamente">
-        Ops... Ocorreu um erro ao buscar dados do personagem
+      <Error sendToPage={sendToPage} buttonText="Try again">
+        Ops... An error occurred while fetching character data
       </Error>
     );
   }

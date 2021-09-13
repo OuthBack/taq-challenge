@@ -14,7 +14,7 @@ export function HomeList() {
 
       {showError && (
         <ErrorContainer>
-          <MiddleTitle>Não encontramos mais nenhum personagem</MiddleTitle>
+          <MiddleTitle>There aren't more characters</MiddleTitle>
         </ErrorContainer>
       )}
     </Container>

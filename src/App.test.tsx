@@ -228,7 +228,7 @@ describe("Should render organisms", () => {
       </AppProvider>
     );
 
-    const text = queryByText(/episódios/i);
+    const text = queryByText(/episodes/i);
     expect(text).toBeInTheDocument();
 
     episode.forEach(({ name }) => {
