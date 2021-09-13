@@ -300,7 +300,7 @@ describe("Should change page on click", () => {
       fireEvent.click(button);
     });
 
-    expect(history.location.pathname).toBe("../");
+    expect(history.location.pathname).toBe("/");
   });
 
   it("Error redirect to Home List", () => {

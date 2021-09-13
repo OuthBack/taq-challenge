@@ -19,7 +19,7 @@ export function CharacterInfo({
   return (
     <Container>
       <ButtonContainer>
-        <Button onClick={() => history.push("../")}>Menu Principal</Button>
+        <Button onClick={() => history.go(-1)}>Voltar</Button>
       </ButtonContainer>
 
       <CharacterInfoCard
