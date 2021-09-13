@@ -242,7 +242,9 @@ describe("Should render Error", () => {
   it("Error Compoennt", () => {
     const { getByRole } = render(
       <AppProvider>
-        <Error sendToPage={() => {}}>error</Error>
+        <Error sendToPage={() => {}} buttonText="error">
+          error
+        </Error>
       </AppProvider>
     );
 
@@ -306,7 +308,7 @@ describe("Should change page on click", () => {
     const { getByRole } = render(
       <AppProvider>
         <Router history={history}>
-          <Error sendToPage={() => history.push("/")} />
+          <Error sendToPage={() => history.push("/")} buttonText="" />
         </Router>
       </AppProvider>
     );
